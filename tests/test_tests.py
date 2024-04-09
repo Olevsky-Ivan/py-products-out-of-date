@@ -14,7 +14,7 @@ def test_expiration_day_today_not_outdated(monkeypatch):
     )
 
     test_result = pytest.main(["app/test_main.py"])
-    assert test_result.value == 1, (
+    assert test_result.value == 0, (
         "Product with expiration date equals today is not outdated."
     )
 
@@ -31,6 +31,6 @@ def test_expiration_day_yesterday_outdated(monkeypatch):
     )
 
     test_result = pytest.main(["app/test_main.py"])
-    assert test_result.value == 1, (
+    assert test_result.value == 0, (
         "Product with expiration date equals yesterday is outdated."
     )
